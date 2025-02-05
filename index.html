@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="Hawkye: Drone autônomo com IA para resgate em desastres naturais.">
   <meta name="keywords" content="Drone, Resgate, IA, Visão Computacional, HawkEye, Inovação">
-  <meta name="author" content="Seu Nome">
+  <meta name="author" content="Gabriel Inojoza">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hawkye - Resgate Inteligente</title>
 
@@ -18,21 +18,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <!-- CSS Principal -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="public/css/styles.css">
 
   <!-- GSAP (GreenSock) + ScrollToPlugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" defer></script>
 
   <!-- JS Principal -->
-  <script src="script.js" defer></script>
+  <script src="public/js/script.js" defer></script>
 </head>
 
 <body>
   <!-- Animação de carregamento com o Drone (opcional) -->
-  <div id="drone-animation">
-    <img src="imgs/drone.png" alt="Drone HawkEye" id="drone-loading">
-  </div>
+  <!-- <div id="drone-animation">
+    <img src="public/imgs/drone.png" alt="Drone HawkEye" id="drone-loading">
+  </div> -->
 
   <!-- BOTÃO SCROLL TOP -->
   <button class="scroll-top" onclick="scrollToTop()">
@@ -44,8 +44,8 @@
     <div class="container header-container">
       <div class="logo">
         <span class="logo-text">
-          <i class="fas fa-drone"></i> <!-- Ícone no logo, opcional -->
-          Hawkye
+          <i class="fas fa-drone"></i>
+          <a href="#" style="text-decoration: none; color: #333;">Hawkye</a>
         </span>
       </div>
 
@@ -58,10 +58,11 @@
 
       <nav id="nav-menu">
         <ul>
-          <li><a href="#intro">Início</a></li>
+          <!-- <li><a href="#intro">Início</a></li> -->
           <li><a href="#objetivos">Objetivos</a></li>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#premiacoes">Premiações</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -73,13 +74,13 @@
     <div class="hero-overlay"></div>
 
     <!-- Drone que voa horizontalmente -->
-    <img src="imgs/drone.png" alt="Drone Flutuante" id="intro-drone">
+    <img src="public/imgs/drone.png" alt="Drone Flutuante" id="intro-drone">
 
     <!-- Nome estilizado (imagem) no lugar do h1 -->
     <div class="hero-content container">
       <div class="logo-img">
         <!-- Exemplo: imagem estilizada do nome "HawkEye" -->
-        <img src="imgs/Hawkye.png" alt="Hawkye Logo Estilizado">
+        <img src="public/imgs/Hawkye.png" alt="Hawkye Logo Estilizado">
       </div>
       <p>
         <i class="fas fa-robot"></i>
@@ -214,6 +215,28 @@
     </div>
   </section>
 
+  <!-- NOVA SEÇÃO DE PREMIAÇÕES -->
+  <section id="premiacoes" class="section fade-in-section alt-bg">
+    <div class="container">
+      <h2><i class="fas fa-trophy"></i> Premiações</h2>
+
+      <div class="award-card">
+        <!-- Substitua pelo caminho real da foto do evento -->
+        <img src="public/imgs/demoday_premiacao.jpeg" alt="Foto do momento da premiação" class="award-image" />
+
+        <div class="award-content">
+          <h3>🏆 1º lugar no Demoday do Porto Digital</h3>
+          <p>
+            A equipe <strong>Hawkye</strong> recebeu o primeiro lugar no evento do
+            Porto Digital, destacando-se pela inovação, eficiência e impacto positivo
+            de nossa solução de <em>drone autônomo com IA</em> para resgate.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Seção de Contato / Footer -->
   <footer id="contato" class="section footer-section fade-in-section">
     <div class="container">
@@ -225,8 +248,10 @@
       </p>
       <div class="social-links">
         <a href="#" target="_blank" title="Twitter"><i class="fab fa-github"></i></a>
-        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/h4wkye/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/hawkye/" target="_blank" title="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/h4wkye/" target="_blank" title="Instagram"><i
+            class="fab fa-instagram"></i></a>
       </div>
       <p class="frase-inspiradora">
         "Transformando desafios em oportunidades para salvar vidas."

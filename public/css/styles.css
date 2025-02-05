@@ -1,0 +1,511 @@
+/* RESET E FONTES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  /* texto padrão em cinza-escuro */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* PALAVRAS-CHAVE DE COR */
+:root {
+  --primary-color: #000;
+  --secondary-color: #333;
+  --light-color: #383838;
+  --bg-color: #fff;
+  --transition-speed: 0.3s;
+}
+
+.scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #0e0f16;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 15px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top:hover {
+  border-color: #fff;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 720px) {
+
+  .scroll-top {
+    font-size: 14px;
+  }
+}
+
+/* ANIMAÇÃO INICIAL DO DRONE (OPCIONAL) */
+#drone-animation {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#drone-loading {
+  width: 120px;
+  opacity: 0;
+}
+
+/* HEADER */
+#header {
+  background: var(--bg-color);
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+}
+
+.logo-text i {
+  color: var(--primary-color);
+  margin-right: 0.4rem;
+}
+
+/* MENU HAMBURGUER */
+.menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-btn .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 5px 0;
+  transition: all var(--transition-speed) ease;
+}
+
+/* NAV MENU */
+#nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+#nav-menu ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+  display: inline-flex;
+  align-items: center;
+}
+
+#nav-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* MENU MOBILE */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  #nav-menu {
+    position: absolute;
+    top: 70px;
+    right: -250px;
+    background: var(--bg-color);
+    border: 1px solid #eee;
+    padding: 1rem 2rem;
+    border-radius: 8px 0 0 8px;
+    transition: right var(--transition-speed) ease;
+  }
+
+  #nav-menu.open {
+    right: 0;
+  }
+
+  #nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* SEÇÕES BÁSICAS */
+.section {
+  position: relative;
+  min-height: 60vh;
+  padding: 6rem 2rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.section-text {
+  color: var(--light-color);
+  margin-bottom: 2rem;
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+/* HERO (Preto + Cinza) */
+.section-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #000 0%, #333 100%);
+  height: 100vh;
+  padding-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInHero 1.2s ease forwards;
+  color: #fff;
+}
+
+.hero-content .logo-img img {
+  max-width: 500px;
+  /* Ajuste conforme o tamanho desejado */
+}
+
+.logo-img {
+  position: relative;
+  display: inline-block; /* ou block, conforme o layout */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #eaeaea;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DRONE NO INTRO: VOO vertical*/
+#intro-drone {
+  position: absolute;
+  top: 20%;
+  left: 65%;
+  /* Centraliza o drone e o desloca 60px para a direita */
+  transform: translate(calc(-50% + 260px), -50%);
+  width: 120px;
+  z-index: 2;
+  animation: droneFloat 2s ease-in-out infinite;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #intro-drone {
+    /* Reduz o deslocamento e o tamanho para dispositivos médios */
+    transform: translate(calc(-50% + 30px), -50%);
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  #intro-drone {
+    /* Em telas muito pequenas, centraliza o drone sem deslocamento extra */
+    transform: translate(-50%, -50%);
+    width: 80px;
+    left: 70%;
+  }
+}
+
+/* Adicione este trecho ao seu CSS para animar o drone apenas com CSS */
+@keyframes droneFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* OBJETIVOS, FUNCIONALIDADES, SOBRE */
+.goals-grid,
+.cards {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.goals-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.goal-item,
+.card {
+  background: #fff;
+  border:1px solid #727272bd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition-speed);
+  color: var(--secondary-color);
+}
+
+.goal-item:hover,
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.goal-item i,
+.card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.about-list li {
+  margin-bottom: 0.8rem;
+  color: var(--light-color);
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.about-list li i {
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* SEÇÃO ALT-BG */
+.alt-bg {
+  background: #f2f2f2;
+}
+
+
+/* ============================= */
+/* SEÇÃO PREMIAÇÕES */
+/* ============================= */
+
+/* Card principal que agrupa a imagem e o texto */
+.award-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 2rem;
+  align-items: center;
+  transition: transform var(--transition-speed);
+  color: var(--secondary-color);
+  margin-top: 1.5rem; /* espaçamento interno na seção */
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagem do evento */
+.award-image {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover; /* Mantém a imagem cortada se for maior */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container do texto */
+.award-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.award-content p {
+  color: var(--light-color);
+  line-height: 1.6;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .award-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .award-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+.footer-section {
+  background: #f9f9f9;
+  color: var(--secondary-color);
+  text-align: center;
+  /* padding: 4rem 2rem; */
+  border-top: 1px solid #eee;
+}
+
+.footer-section h2 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.social-links {
+  margin: 1.5rem 0;
+}
+
+.social-links a {
+  color: var(--secondary-color);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: transform var(--transition-speed);
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+.frase-inspiradora {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.footer-section small {
+  display: block;
+  margin-top: 1rem;
+  color: #aaa;
+}
+
+/* ANIMAÇÃO DE APARIÇÃO (GSAP) */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+  .hero-content .logo-img img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .footer-section{
+    padding: 4rem 2rem;
+  }
+}
