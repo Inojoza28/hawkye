@@ -74,49 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", checkFadeIn);
   checkFadeIn();
 
-  // ----------------------------------------------------------------
-  // 5. DRONE FLUTUANDO 
-  // ----------------------------------------------------------------
-  const introDrone = document.getElementById("intro-drone");
-  let floatingTween = null;
-
-  // Animação de flutuar verticalmente (idle)
-  function startFloating(droneElem) {
-    floatingTween = gsap.to(droneElem, {
-      y: "+=20",
-      duration: 2,
-      yoyo: true,
-      repeat: -1,
-      ease: "sine.inOut"
-    });
-  }
-
-  // Interrompe a animação de flutuar (caso seja necessário)
-  function stopFloating() {
-    if (floatingTween) {
-      floatingTween.kill();
-      floatingTween = null;
-    }
-  }
-
-  function droneIdle() {
-    // Posiciona o drone no canto direito com uma margem (por ex. 50px)
-    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-    const droneWidth = introDrone.offsetWidth;
-    const marginRight = 50;
-
-    // Ajuste se precisar mudar a posição vertical (top) no CSS
-    gsap.set(introDrone, {
-      x: windowWidth - droneWidth - marginRight
-    });
-
-    // Inicia o flutuar
-    startFloating(introDrone);
-  }
-
-  // Chama a função para manter o drone parado e flutuando
-  droneIdle();
-
   // Se quiser recalcular ao redimensionar a janela
   window.addEventListener("resize", () => {
     gsap.killTweensOf(introDrone);

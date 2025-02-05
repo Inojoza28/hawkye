@@ -267,9 +267,43 @@ body {
 #intro-drone {
   position: absolute;
   top: 20%;
-  left: -220px;
+  left: 65%;
+  /* Centraliza o drone e o desloca 60px para a direita */
+  transform: translate(calc(-50% + 260px), -50%);
   width: 120px;
   z-index: 2;
+  animation: droneFloat 2s ease-in-out infinite;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #intro-drone {
+    /* Reduz o deslocamento e o tamanho para dispositivos médios */
+    transform: translate(calc(-50% + 30px), -50%);
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  #intro-drone {
+    /* Em telas muito pequenas, centraliza o drone sem deslocamento extra */
+    transform: translate(-50%, -50%);
+    width: 80px;
+    left: 70%;
+  }
+}
+
+/* Adicione este trecho ao seu CSS para animar o drone apenas com CSS */
+@keyframes droneFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* OBJETIVOS, FUNCIONALIDADES, SOBRE */
@@ -412,9 +446,9 @@ body {
     font-size: 1.5rem;
   }
 
-  #intro-drone {
+  /* #intro-drone {
     top: 23%;
     left: 10px;
     width: 90px;
-  }
+  } */
 }
