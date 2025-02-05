@@ -24,7 +24,7 @@ body {
   /* Preto */
   --secondary-color: #333;
   /* Cinza-escuro */
-  --light-color: #585858;
+  --light-color: #777;
   /* Cinza intermediário para textos */
   --bg-color: #fff;
   /* Branco */
@@ -104,49 +104,17 @@ body {
 }
 
 /* MENU HAMBURGUER */
-.menu-btn{
-  justify-content: center;
-  align-items: center;
+.menu-btn {
   display: none;
   cursor: pointer;
 }
 
-.hamburger {
-  cursor: pointer;
-  padding-bottom: 3px;
-  position: relative;
-}
-
-.hamburger input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-.bar {
-  display: block;
-  width: 30px;
+.menu-btn .bar {
+  width: 25px;
   height: 3px;
-  margin: 6px auto;
-  border-radius: 40px;
-  transition: all 0.3s cubic-bezier(0.37, -1.11, 0.79, 2.02);
-  background-color: #404040;
-}
-
-.hamburger input:checked ~ .bar:nth-child(2) {
-  transform: translateY(9.5px) rotate(45deg);
-}
-
-.hamburger input:checked ~ .bar:nth-child(3) {
-  opacity: 0;
-}
-
-.hamburger input:checked ~ .bar:nth-child(4) {
-  transform: translateY(-8px) rotate(-45deg);
+  background-color: var(--secondary-color);
+  margin: 5px 0;
+  transition: all var(--transition-speed) ease;
 }
 
 
@@ -329,7 +297,7 @@ body {
 .card {
   background: #fff;
   border: 1px solid #eee;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
   transition: transform var(--transition-speed);
