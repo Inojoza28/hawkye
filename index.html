@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="HawkEye: Drone autônomo com IA para resgate em desastres naturais.">
+  <meta name="keywords" content="Drone, Resgate, IA, Visão Computacional, HawkEye, Inovação">
+  <meta name="author" content="Seu Nome">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HawkEye - Resgate Inteligente</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- GSAP (GreenSock) + ScrollToPlugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" defer></script>
+
+  <!-- JS Principal -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Animação de carregamento com o Drone (opcional) -->
+  <!-- <div id="drone-animation">
+    <img src="imgs/drone.png" alt="Drone HawkEye" id="drone-loading">
+  </div> -->
+
+  <!-- BOTÃO SCROLL TOP -->
+  <button class="scroll-top" onclick="scrollToTop()">
+    <i class='bx bxs-up-arrow'></i>
+  </button>
+
+  <!-- Header / Menu -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-text">
+          <i class="fas fa-drone"></i> <!-- Ícone no logo, opcional -->
+          HawkEye
+        </span>
+      </div>
+
+      <!-- Menu Hamburguer (mobile) -->
+      <div class="menu-btn" id="menu-btn">
+        <label class="hamburger">
+          <input type="checkbox" />
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      </div>
+      <!-- <div class="menu-btn" id="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div> -->
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#intro">Início</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero (intro) -->
+  <section id="intro" class="section section-hero">
+    <div class="hero-overlay"></div>
+
+    <!-- Drone que voa horizontalmente -->
+    <img src="imgs/drone.png" alt="Drone Flutuante" id="intro-drone">
+
+    <!-- Nome estilizado (imagem) no lugar do h1 -->
+    <div class="hero-content container">
+      <div class="logo-img">
+        <!-- Exemplo: imagem estilizada do nome "HawkEye" -->
+        <img src="imgs/Hawkye.png" alt="HawkEye Logo Estilizado">
+      </div>
+      <p>
+        <i class="fas fa-robot"></i>
+        Resgate Inteligente com Visão Computacional e IA
+      </p>
+      <a href="#objetivos" class="btn btn-primary">
+        Descubra Mais <i class="fas fa-arrow-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Seção Objetivos -->
+  <section id="objetivos" class="section fade-in-section">
+    <div class="container">
+      <h2><i class="fas fa-bullseye"></i> Objetivos</h2>
+      <p class="section-text">
+        Nosso principal objetivo é <strong>agilizar drasticamente</strong> o tempo de resposta
+        em emergências, tornando o processo de busca e salvamento mais
+        <strong>eficiente</strong> e <strong>seguro</strong>. Desastres naturais muitas vezes
+        deixam vítimas em locais de difícil acesso, e o <strong>HawkEye</strong> é capaz de
+        <em>chegar aonde os humanos não conseguem imediatamente</em>.
+      </p>
+      <div class="goals-grid">
+        <div class="goal-item">
+          <i class="fas fa-stopwatch"></i>
+          <h3>Resposta Instantânea</h3>
+          <p>Localize vítimas em minutos, reduzindo os riscos causados pela demora.</p>
+        </div>
+        <div class="goal-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Proteção</h3>
+          <p>Menos exposição das equipes de socorro, minimizando acidentes em zonas perigosas.</p>
+        </div>
+        <div class="goal-item">
+          <i class="fas fa-rocket"></i>
+          <h3>Inovação Contínua</h3>
+          <p>Atualizações constantes para atender às demandas de diferentes cenários de desastre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Funcionalidades -->
+  <section id="funcionalidades" class="section fade-in-section alt-bg">
+    <div class="container">
+      <h2><i class="fas fa-cogs"></i> Funcionalidades e Diferenciais</h2>
+      <p class="section-text">
+        O <strong>HawkEye</strong> se diferencia pela combinação de hardware robusto, software
+        inteligente e interface amigável. Aqui estão as funcionalidades que o
+        destacam como uma ferramenta <em>essencial</em> em situações de resgate.
+      </p>
+      <div class="cards">
+        <article class="card micro-interaction">
+          <i class="fas fa-eye"></i>
+          <h3>Visão Computacional Avançada</h3>
+          <p>
+            Câmeras térmicas, infravermelho e leitura de sinais vitais que
+            auxiliam na detecção rápida de sobreviventes.
+          </p>
+        </article>
+        <article class="card micro-interaction">
+          <i class="fas fa-brain"></i>
+          <h3>IA Aprimorada</h3>
+          <p>
+            Algoritmos que processam dados em tempo real, identificando padrões
+            de calor ou movimento.
+          </p>
+        </article>
+        <article class="card micro-interaction">
+          <i class="fas fa-broadcast-tower"></i>
+          <h3>Conectividade 5G & Satélite</h3>
+          <p>
+            Comunicação confiável mesmo em locais remotos, compartilhando
+            coordenadas e estatísticas em segundos.
+          </p>
+        </article>
+        <article class="card micro-interaction">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Painel de Controle</h3>
+          <p>
+            Aplicativo intuitivo que permite criar rotas automáticas ou
+            controlar o drone manualmente.
+          </p>
+        </article>
+        <article class="card micro-interaction">
+          <i class="fas fa-moon"></i>
+          <h3>Operação em Condições Extremas</h3>
+          <p>
+            Carcaça resistente a temperaturas extremas e LIDAR para vôo seguro em ambientes desafiadores.
+          </p>
+        </article>
+        <article class="card micro-interaction">
+          <i class="fas fa-globe"></i>
+          <h3>Versatilidade Global</h3>
+          <p>
+            Projetado para se adaptar a terrenos acidentados, regiões costeiras,
+            florestas densas ou grandes metrópoles.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="section fade-in-section">
+    <div class="container">
+      <h2><i class="fas fa-info-circle"></i> Sobre o HawkEye</h2>
+      <p class="section-text">
+        A iniciativa do <strong>HawkEye</strong> nasceu de pesquisas em <strong>IA</strong>,
+        <strong>Robótica</strong> e <strong>Ciências Ambientais</strong>, buscando soluções imediatas
+        para desastres naturais. Com foco em segurança e efetividade, nossa equipe desenvolveu um
+        drone que permite operações de busca e salvamento com <em>velocidade e precisão</em>.
+      </p>
+      <ul class="about-list">
+        <li>
+          <i class="fas fa-check-circle"></i>
+          Integrado com protocolos de emergência globais
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          Compatível com ferramentas de mapeamento e geolocalização
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          Atualizações frequentes com novos sensores e algoritmos
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          Sucesso comprovado em testes simulados de enchentes e terremotos
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Seção de Contato / Footer -->
+  <footer id="contato" class="section footer-section fade-in-section">
+    <div class="container">
+      <h2><i class="fas fa-envelope"></i> Contato</h2>
+      <p class="section-text" style="margin: 0 auto;">
+        Tem interesse em conhecer mais, investir ou propor parcerias estratégicas?
+        Estamos prontos para ouvir você e adequar nossa solução conforme as
+        necessidades de cada operação.
+      </p>
+      <div class="social-links">
+        <a href="#" target="_blank" title="Twitter"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/h4wkye/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="frase-inspiradora">
+        "Transformando desafios em oportunidades para salvar vidas."
+      </p>
+      <small>&copy; 2025 HawkEye. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+</body>
+
+</html>
