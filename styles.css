@@ -111,6 +111,14 @@ body {
   cursor: pointer;
 }
 
+.menu-btn .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 5px 0;
+  transition: all var(--transition-speed) ease;
+}
+
 .hamburger {
   cursor: pointer;
   padding-bottom: 3px;
@@ -148,7 +156,6 @@ body {
 .hamburger input:checked ~ .bar:nth-child(4) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
 
 
 /* NAV MENU */

@@ -23,42 +23,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-
+  // 2. Rolagem suave ao clicar nos links do menu
+  const navLinks = document.querySelectorAll("#nav-menu ul li a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: targetSection.offsetTop - 80,
+        ease: "power2.inOut",
+      });
+    });
+  });
 
  // 3. Menu Hamburguer (mobile)
-// 3. Menu Hamburguer (mobile)
 const menuBtn = document.getElementById("menu-btn");
 const navMenu = document.getElementById("nav-menu");
 const hamburgerInput = document.querySelector(".hamburger input");
 
-// Alterna o menu com base na mudança do input (checkbox)
-if (hamburgerInput) {
-  hamburgerInput.addEventListener("change", () => {
-    // Adiciona a classe "open" ao navMenu se o checkbox estiver marcado
-    navMenu.classList.toggle("open", hamburgerInput.checked);
-  });
-}
-
-// Caso o botão de menu (menuBtn) seja clicado (opcional, para garantir compatibilidade)
 menuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("open");
-  // Atualiza o estado do checkbox conforme a classe "open"
-  if (hamburgerInput) {
-    hamburgerInput.checked = navMenu.classList.contains("open");
-  }
 });
 
-// Ao clicar em qualquer link do menu, fecha o menu e desmarca o checkbox
-const navLinks = document.querySelectorAll("#nav-menu ul li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("open");
+    // Desmarca o checkbox do menu
     if (hamburgerInput) {
       hamburgerInput.checked = false;
     }
   });
 });
-
 
 
   // 4. Animação de Fade-In das seções ao rolar (GSAP)
