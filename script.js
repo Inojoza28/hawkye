@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   checkFadeIn();
 
   // ----------------------------------------------------------------
-  // 5. DRONE FLUTUANDO (SEM VOO HORIZONTAL)
+  // 5. DRONE FLUTUANDO 
   // ----------------------------------------------------------------
   const introDrone = document.getElementById("intro-drone");
   let floatingTween = null;

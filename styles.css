@@ -20,13 +20,9 @@ body {
 
 /* PALAVRAS-CHAVE DE COR */
 :root {
-    /* Preto */
   --primary-color: #000;
-    /* Cinza-escuro */
   --secondary-color: #333;
-    /* Cinza intermediário para textos */
-  --light-color: #585858;
-    /* Branco */
+  --light-color: #383838;
   --bg-color: #fff;
   --transition-speed: 0.3s;
 }
@@ -227,7 +223,7 @@ body {
 
 .logo-img {
   position: relative;
-  display: inline-block; /* ou block, conforme seu layout */
+  display: inline-block; /* ou block, conforme o layout */
 }
 
 .hero-content p {
@@ -267,7 +263,7 @@ body {
   }
 }
 
-/* DRONE NO INTRO: VOO HORIZONTAL */
+/* DRONE NO INTRO: VOO vertical*/
 #intro-drone {
   position: absolute;
   top: 20%;
