@@ -24,33 +24,45 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // 2. Rolagem suave ao clicar nos links do menu
-  const navLinks = document.querySelectorAll("#nav-menu ul li a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: targetSection.offsetTop - 80,
-        ease: "power2.inOut",
-      });
+// 2. Rolagem suave ao clicar nos links do menu
+const navLinks = document.querySelectorAll("#nav-menu ul li a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: targetSection.offsetTop - 80,
+      ease: "power2.inOut",
     });
   });
+});
 
- // 3. Menu Hamburguer (mobile)
+// 3. Menu Hamburguer (mobile)
 const menuBtn = document.getElementById("menu-btn");
 const navMenu = document.getElementById("nav-menu");
 const hamburgerInput = document.querySelector(".hamburger input");
 
+// Ao alterar o estado do checkbox, alterna o menu
+if (hamburgerInput) {
+  hamburgerInput.addEventListener("change", () => {
+    navMenu.classList.toggle("open", hamburgerInput.checked);
+  });
+}
+
+// Caso o botão (menu-btn) seja clicado também, sincroniza o estado
 menuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("open");
+  if (hamburgerInput) {
+    hamburgerInput.checked = navMenu.classList.contains("open");
+  }
 });
 
+// Ao clicar em qualquer link, fecha o menu e desmarca o checkbox
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("open");
-    // Desmarca o checkbox do menu
     if (hamburgerInput) {
       hamburgerInput.checked = false;
     }
