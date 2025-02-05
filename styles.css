@@ -135,15 +135,6 @@ body {
   z-index: 2;
 }
 
-.bar {
-  display: block;
-  width: 30px;
-  height: 3px;
-  margin: 6px auto;
-  border-radius: 40px;
-  transition: all 0.3s cubic-bezier(0.37, -1.11, 0.79, 2.02);
-  background-color: #404040;
-}
 
 .hamburger input:checked ~ .bar:nth-child(2) {
   transform: translateY(9.5px) rotate(45deg);
