@@ -100,17 +100,72 @@ body {
 }
 
 /* MENU HAMBURGUER */
-.menu-btn {
-  display: none;
-  cursor: pointer;
+/* MENU HAMBURGUER (Aparece apenas no modo responsivo) */
+.burger {
+  display: none; /* Oculta o menu por padrão */
 }
 
-.menu-btn .bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--secondary-color);
-  margin: 5px 0;
-  transition: all var(--transition-speed) ease;
+@media (max-width: 768px) {
+  .burger {
+    position: relative;
+    width: 30px; /* Reduzi o tamanho do botão */
+    height: 22px; /* Ajustei a altura proporcionalmente */
+    background: transparent;
+    cursor: pointer;
+    display: block; /* Exibe apenas no modo responsivo */
+  }
+
+  .burger input {
+    display: none;
+  }
+
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 3px; /* Reduzi a espessura das linhas */
+    width: 100%;
+    background: var(--secondary-color); /* Mantendo o esquema de cores */
+    border-radius: 6px; /* Ajustei para manter um design mais delicado */
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform: translateY(-100%);
+    transform-origin: left center;
+  }
+
+  /* Ajustes na animação para o novo tamanho */
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: -1px; /* Ajustei a posição para o novo tamanho */
+    left: 3px;
+  }
+
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 20px; /* Ajustei para alinhar melhor com o novo tamanho */
+    left: 3px;
+  }
 }
 
 /* NAV MENU */
@@ -132,6 +187,7 @@ body {
 #nav-menu ul li a:hover {
   color: var(--primary-color);
 }
+
 
 /* MENU MOBILE */
 @media (max-width: 768px) {

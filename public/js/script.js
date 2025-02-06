@@ -40,17 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // 3. Menu Hamburguer (mobile)
-  const menuBtn = document.getElementById("menu-btn");
+  const menuBtn = document.getElementById("burger-toggle");
   const navMenu = document.getElementById("nav-menu");
-  menuBtn.addEventListener("click", () => {
+
+  menuBtn.addEventListener("change", () => {
     navMenu.classList.toggle("open");
   });
 
-  navLinks.forEach((link) => {
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll("#nav-menu ul li a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
+      menuBtn.checked = false; // Fechar animação do menu
     });
   });
+
 
   // 4. Animação de Fade-In das seções ao rolar (GSAP)
   const fadeInSections = document.querySelectorAll(".fade-in-section");
