@@ -297,7 +297,8 @@ body {
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    max-height: none;     /* Remove qualquer limitação de altura */
+    max-height: none;
+    /* Remove qualquer limitação de altura */
     min-width: 140px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -316,14 +317,22 @@ body {
 @media (max-width: 768px) {
   .dropdown-content {
     position: static;
+    gap: 0.4rem !important;
+    /* Gap menor para os itens do submenu */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
   }
 
+  .dropdown-content li {
+    padding: 0.4rem;
+  }
+
+
   .dropdown.open .dropdown-content {
-    max-height: 250px;    /*se precisar de mais espaço tem que ajustar*/
+    max-height: 250px;
+    /*se precisar de mais espaço tem que ajustar*/
   }
 }
 
@@ -351,6 +360,7 @@ body {
 
   #nav-menu ul {
     flex-direction: column;
+    margin-right: 0.4rem;
     gap: 1rem;
   }
 }
@@ -650,12 +660,11 @@ body {
 }
 
 @media (max-width: 480px) {
-  .colaborador-card{
+  .colaborador-card {
     width: 95%;
     margin: 0 auto;
   }
 }
-
 
 /* Botão "Ver Bio" - Estilização minimalista e profissional */
 .btn-bio {
