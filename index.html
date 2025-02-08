@@ -24,6 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" defer></script>
 
+  <script src="public/js/modal.js"></script>
   <!-- JS Principal -->
   <script src="public/js/script.js" defer></script>
 </head>
@@ -62,7 +63,16 @@
           <!-- <li><a href="#intro">Início</a></li> -->
           <li><a href="#objetivos">Objetivos</a></li>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li class="dropdown">
+            <button type="button" class="dropbtn">
+              Sobre <i class="fas fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-content">
+              <li><a href="#sobre">Sobre o Hawkye</a></li>
+              <li><a href="#membros">Membros</a></li>
+            </ul>
+          </li>
+          
           <li><a href="#premiacoes">Premiações</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -213,8 +223,136 @@
           Sucesso comprovado em testes simulados de enchentes e terremotos
         </li>
       </ul>
+      
+      <!-- Nova Sub-Seção: Colaboradores -->
+      <div class="colaboradores" id="membros">
+        <h3>Membros</h3>
+        <div class="colaboradores-grid">
+
+          <!-- Card 1 -->
+          <div class="colaborador-card">
+            <img src="public/imgs/membros/maria-grijp.jpeg" alt="Maria Grijp">
+            <h4>Maria Grijp</h4>
+            <p>Gerente de Projetos</p>
+            <div class="social-icons">
+              <a href="https://github.com/mariagrijp" target="_blank" class="btn-social"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/maria-luiza-8231822a6/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn-social"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/malugrijp" target="_blank" class="btn-social"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <button class="btn-bio" data-name="Maria Grijp"
+              data-bio=" 🚀 Olá! Sou Maria Grijp, entusiasta da tecnologia e inovação, com experiência em gestão de projetos e participação em hackathons.
+
+              💻 Apaixonada por aprendizado contínuo, destaca-se na organização de eventos, suporte logístico e liderança de equipes, sempre buscando soluções criativas e a troca de conhecimento.
+              
+              🔗 Conecte-se comigo nas redes sociais! ">Ver Bio</button>
+          </div>
+
+
+          <!-- Card 2 -->
+          <div class="colaborador-card">
+            <img src="imgs/colaborador2.jpg" alt="Williams">
+            <h4>Williams</h4>
+            <p>Desenvolvedor Back-end</p>
+            <div class="social-icons">
+              <a href="https://github.com/usuario2" target="_blank" class="btn-social"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/usuario2" target="_blank" class="btn-social"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/usuario2" target="_blank" class="btn-social"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <button class="btn-bio" data-name="Williams"
+              data-bio="Exemplo 2 possui amplo conhecimento em back-end e arquitetura de sistemas.">Ver Bio</button>
+          </div>
+
+
+          <!-- Card 3 -->
+          <div class="colaborador-card">
+            <img src="public/imgs/membros/gabriel-inojoza.jpeg" alt="Gabriel Inojoza">
+            <h4>Gabriel Inojoza</h4>
+            <p>Desenvolvedor Front-end</p>
+            <div class="social-icons">
+              <a href="https://github.com/Inojoza28" target="_blank" class="btn-social"><i
+                  class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/gabrielinojoza" target="_blank" class="btn-social"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/dev_inojoza_/" target="_blank" class="btn-social"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <button class="btn-bio" data-name="Gabriel Inojoza" data-bio="👋🏽 Olá! Sou Gabriel Inojoza, criador de experiências digitais.
+
+              Especializado em front-end, transformo ideias em soluções inovadoras ao combinar criatividade, precisão e tecnologia para criar interfaces envolventes e funcionais.
+              
+              Movido por desafios e comprometido com a inovação, estou sempre evoluindo para entregar o melhor.
+              
+              🔗 Conecte-se comigo nas redes sociais! 🚀 ">Ver Bio</button>
+          </div>
+
+
+          <!-- Card 4 -->
+          <div class="colaborador-card">
+            <img src="public/imgs/membros/dayane-carla.jpg" alt="Dayane Carla">
+            <h4>Dayane Carla</h4>
+            <p>Desenvolvedora Front-end</p>
+            <div class="social-icons">
+              <a href="https://github.com/dayanetecla" target="_blank" class="btn-social"><i
+                  class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/company/hawkye/" target="_blank" class="btn-social"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/dayaneanaxtacio" target="_blank" class="btn-social"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <button class="btn-bio" data-name="Dayane Carla" data-bio="🎓 Olá! Sou Dayane Carla, graduanda em Ciência da Computação pela UFPE, apaixonada por tecnologia e inovação.
+              
+              Acredito firmemente no poder transformador da tecnologia para enfrentar desafios complexos e gerar mudanças positivas na sociedade. 
+
+              🔗 Conecte-se comigo nas redes sociais! 🚀">Ver Bio</button>
+          </div>
+
+
+          <!-- Card 5 -->
+          <div class="colaborador-card">
+            <img src="imgs/colaborador2.jpg" alt="Henrique">
+            <h4>Henrique</h4>
+            <p>Desenvolvedor</p>
+            <div class="social-icons">
+              <a href="https://github.com/usuario5" target="_blank" class="btn-social"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/usuario5" target="_blank" class="btn-social"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/usuario5" target="_blank" class="btn-social"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <button class="btn-bio" data-name="Henrique"
+              data-bio="Exemplo 5 traz expertise em desenvolvimento mobile e design responsivo.">Ver Bio</button>
+          </div>
+
+          
+          <!-- Novo Card do Projeto (apenas para telas grandes) -->
+          <div class="project-card">
+            <a href="https://www.instagram.com/h4wkye/" target="_blank" class="project-card-link">
+                <img src="public/imgs/Hawkye.png" alt="HawkEye Logo" class="project-logo">
+              </div>              
+            </a>            
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- MODAL DE APRESENTAÇÃO -->
+  <div id="bio-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2 id="modal-name">
+        <i class="fas fa-user">&nbsp; </i> <span class="modal-name-text"></span>
+      </h2>
+      <div class="modal-body">
+        <p id="modal-bio-text"></p>
+      </div>
+    </div>
+  </div>
+
 
   <!-- NOVA SEÇÃO DE PREMIAÇÕES -->
   <section id="premiacoes" class="section fade-in-section alt-bg">
@@ -248,7 +386,7 @@
         necessidades de cada operação.
       </p>
       <div class="social-links">
-        <a href="#" target="_blank" title="Twitter"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Inojoza28/hawkye" target="_blank" title="Twitter"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/company/hawkye/" target="_blank" title="LinkedIn"><i
             class="fab fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/h4wkye/" target="_blank" title="Instagram"><i

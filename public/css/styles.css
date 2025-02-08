@@ -100,19 +100,22 @@ body {
 }
 
 /* MENU HAMBURGUER */
-/* MENU HAMBURGUER (Aparece apenas no modo responsivo) */
 .burger {
-  display: none; /* Oculta o menu por padrão */
+  display: none;
+  /* Oculta o menu por padrão */
 }
 
 @media (max-width: 768px) {
   .burger {
     position: relative;
-    width: 30px; /* Reduzi o tamanho do botão */
-    height: 22px; /* Ajustei a altura proporcionalmente */
+    width: 30px;
+    /* Reduzi o tamanho do botão */
+    height: 22px;
+    /* Ajustei a altura proporcionalmente */
     background: transparent;
     cursor: pointer;
-    display: block; /* Exibe apenas no modo responsivo */
+    display: block;
+    /* Exibe apenas no modo responsivo */
   }
 
   .burger input {
@@ -122,10 +125,13 @@ body {
   .burger span {
     display: block;
     position: absolute;
-    height: 3px; /* Reduzi a espessura das linhas */
+    height: 3px;
+    /* Reduzi a espessura das linhas */
     width: 100%;
-    background: var(--secondary-color); /* Mantendo o esquema de cores */
-    border-radius: 6px; /* Ajustei para manter um design mais delicado */
+    background: var(--secondary-color);
+    /* Mantendo o esquema de cores */
+    border-radius: 6px;
+    /* Ajustei para manter um design mais delicado */
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -150,44 +156,174 @@ body {
   }
 
   /* Ajustes na animação para o novo tamanho */
-  .burger input:checked ~ span:nth-of-type(1) {
+  .burger input:checked~span:nth-of-type(1) {
     transform: rotate(45deg);
-    top: -1px; /* Ajustei a posição para o novo tamanho */
+    top: -1px;
+    /* Ajustei a posição para o novo tamanho */
     left: 3px;
   }
 
-  .burger input:checked ~ span:nth-of-type(2) {
+  .burger input:checked~span:nth-of-type(2) {
     width: 0%;
     opacity: 0;
   }
 
-  .burger input:checked ~ span:nth-of-type(3) {
+  .burger input:checked~span:nth-of-type(3) {
     transform: rotate(-45deg);
-    top: 20px; /* Ajustei para alinhar melhor com o novo tamanho */
+    top: 20px;
+    /* Ajustei para alinhar melhor com o novo tamanho */
     left: 3px;
   }
 }
 
-/* NAV MENU */
-#nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-#nav-menu ul li a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-speed);
-  display: inline-flex;
-  align-items: center;
-}
-
-#nav-menu ul li a:hover {
-  color: var(--primary-color);
-}
-
+/* =========================================================
+   NAV MENU BASE
+   ========================================================= */
+   #nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin-right: 0.4rem;   
+  }
+  
+  #nav-menu ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.9rem;      /* Dá um pouco de espaço interno */
+    border-radius: 4px;          /* Deixa as bordas levemente arredondadas */
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  #nav-menu ul li a:hover {
+    background-color: #f7f7f7;   /* Sutil cor de fundo no hover */
+    color: var(--primary-color);
+  }
+  
+  /* =========================================================
+     DROPDOWN BASE (item "Sobre")
+     ========================================================= */
+  .dropdown {
+    position: relative;
+  }
+  
+  /* Botão que mostra/esconde o submenu */
+  .dropbtn {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    margin-top: -2px;
+    align-items: center;
+    gap: 0.3rem;
+    /* Adicione um pequeno padding se quiser consistência com links */
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropbtn:hover {
+    background-color: #f7f7f7; 
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .dropbtn i {
+    font-size: 0.9rem;
+  }
+  
+  /* O submenu interno */
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    /* Nos media queries, definiremos como ele se comporta inicialmente */
+  }
+  
+  /* Links internos do submenu */
+  .dropdown-content li {
+    list-style: none;
+    border-bottom: 1px solid #eee;
+  }
+  .dropdown-content li:last-child {
+    border-bottom: none;
+  }
+  .dropdown-content li a {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .dropdown-content li a:hover {
+    background: #f1f1f1;
+  }
+  
+  /* =========================================================
+     ESTADO INICIAL (SEM .open)
+     ========================================================= */
+  /* Para telas grandes e pequenas, o submenu inicia invisível */
+  .dropdown-content {
+    /* Substituído nos media queries */
+  }
+  
+  /* Quando .dropdown tem a classe .open, o submenu aparece */
+  .dropdown.open .dropdown-content {
+    /* Definido nos media queries */
+  }
+  
+  /* =========================================================
+     TELAS GRANDES (>= 769px)
+     Submenu aparece sobreposto (position:absolute)
+     sem aumentar a altura do header.
+     ========================================================= */
+  @media (min-width: 769px) {
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      /* Remove qualquer limitação de altura */
+      max-height: none;
+      min-width: 140px;          /* Define uma largura mínima para não ficar muito estreito */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  
+    .dropdown.open .dropdown-content {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+  
+  /* =========================================================
+     TELAS MENORES (<= 768px)
+     Submenu expande no fluxo, aumentando a altura do header
+     ========================================================= */
+  @media (max-width: 768px) {
+    .dropdown-content {
+      position: static;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 0.4rem;  /* Espaço entre o botão e o conteúdo */
+    }
+  
+    .dropdown.open .dropdown-content {
+      max-height: 250px;   /* Ajuste se precisar de mais espaço */
+    }
+  }
+  
 
 /* MENU MOBILE */
 @media (max-width: 768px) {
@@ -279,7 +415,8 @@ body {
 
 .logo-img {
   position: relative;
-  display: inline-block; /* ou block, conforme o layout */
+  display: inline-block;
+  /* ou block, conforme o layout */
 }
 
 .hero-content p {
@@ -354,9 +491,11 @@ body {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(20px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -381,7 +520,7 @@ body {
 .goal-item,
 .card {
   background: #fff;
-  border:1px solid #727272bd;
+  border: 1px solid #727272bd;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -426,6 +565,239 @@ body {
   background: #f2f2f2;
 }
 
+/* ============================= */
+/* Estilos para a Seção de Colaboradores */
+/* ============================= */
+.colaboradores {
+  margin-top: 3rem;
+}
+
+.colaboradores h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.colaboradores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.colaborador-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom: 3px solid #000;
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition-speed);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.colaborador-card:hover {
+  transform: translateY(-5px);
+}
+
+.colaborador-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.colaborador-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.colaborador-card p {
+  font-size: 1rem;
+  color: var(--light-color);
+  margin-bottom: 1rem;
+}
+
+.btn-social {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background var(--transition-speed);
+}
+
+.btn-social:hover {
+  background: #333;
+}
+
+/* Responsividade: ajuste em telas menores */
+@media (max-width: 768px) {
+  .colaboradores-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .colaboradores h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Botão "Ver Bio" - Estilização minimalista e profissional */
+.btn-bio {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.4rem 1rem;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-bio:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#bio-modal {
+  display: none;
+}
+
+/* Modal aprimorado e centralizado */
+.modal {
+  display: none;
+  /* Garantido oculto por padrão */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* Centraliza o conteúdo usando Flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+  /* ou #ff1010 */
+  cursor: pointer;
+}
+
+#modal-name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+#modal-bio-text {
+  white-space: pre-line; /* Converte quebras de linha em espaços visíveis */
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.modal-body {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.project-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #000 0%, #333 100%);
+  color: #fff;
+  border-radius: 50px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilização aprimorada do título */
+.project-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Exibe o card apenas em telas grandes */
+@media (max-width: 480px) {
+  .project-card{
+    display: none;
+  }
+  .project-card-link {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .modal-content {
+    width: 100%;
+  }
+
+  #modal-name {
+    font-size: 1.4rem;
+  }
+}
+
 
 /* ============================= */
 /* SEÇÃO PREMIAÇÕES */
@@ -443,7 +815,8 @@ body {
   align-items: center;
   transition: transform var(--transition-speed);
   color: var(--secondary-color);
-  margin-top: 1.5rem; /* espaçamento interno na seção */
+  margin-top: 1.5rem;
+  /* espaçamento interno na seção */
 }
 
 .award-card:hover {
@@ -455,7 +828,8 @@ body {
   width: 300px;
   max-width: 100%;
   border-radius: 8px;
-  object-fit: cover; /* Mantém a imagem cortada se for maior */
+  object-fit: cover;
+  /* Mantém a imagem cortada se for maior */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -479,6 +853,13 @@ body {
   }
 
   .award-image {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-image {
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -491,7 +872,7 @@ body {
   background: #f9f9f9;
   color: var(--secondary-color);
   text-align: center;
-  /* padding: 4rem 2rem; */
+  padding: 4rem 2rem;
   min-height: 40vh;
   border-top: 1px solid #eee;
 }
@@ -562,7 +943,8 @@ body {
   .section h2 {
     font-size: 1.5rem;
   }
-  .footer-section{
+
+  .footer-section {
     padding: 4rem 2rem;
   }
 }
