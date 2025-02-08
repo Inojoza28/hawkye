@@ -311,12 +311,6 @@ body {
      Submenu expande no fluxo, aumentando a altura do header
      ========================================================= */
   @media (max-width: 768px) {
-    .dropbtn {
-      color: var(--secondary-color);
-    }
-    .dropbtn i {
-      color: var(--secondary-color);
-    }
     .dropdown-content {
       position: static;
       max-height: 0;
