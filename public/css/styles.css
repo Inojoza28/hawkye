@@ -245,6 +245,7 @@ body {
   border: 1px solid #eee;
   border-radius: 6px;
   overflow: hidden;
+  margin-top: 4px;
   /* Nos media queries, definiremos como ele se comporta inicialmente */
 }
 
