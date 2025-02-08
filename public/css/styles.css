@@ -314,6 +314,9 @@ body {
     .dropbtn {
       color: var(--secondary-color);
     }
+    .dropbtn i {
+      color: var(--secondary-color);
+    }
     .dropdown-content {
       position: static;
       max-height: 0;
