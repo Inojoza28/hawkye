@@ -216,8 +216,8 @@ body {
     font: inherit;
     cursor: pointer;
     display: inline-flex;
-    margin-top: -2px;
     align-items: center;
+    font-size: 0.95rem;
     gap: 0.3rem;
     /* Adicione um pequeno padding se quiser consistência com links */
     padding: 0.5rem 0.9rem;
