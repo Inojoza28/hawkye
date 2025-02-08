@@ -179,151 +179,154 @@ body {
 /* =========================================================
    NAV MENU BASE
    ========================================================= */
-   #nav-menu ul {
-    list-style: none;
-    display: flex;
-    margin-right: 0.4rem;   
-  }
-  
-  #nav-menu ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 0.9rem;      /* Dá um pouco de espaço interno */
-    border-radius: 4px;          /* Deixa as bordas levemente arredondadas */
-    transition: color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  #nav-menu ul li a:hover {
-    background-color: #f7f7f7;   /* Sutil cor de fundo no hover */
-    color: var(--primary-color);
-  }
-  
-  /* =========================================================
+#nav-menu ul {
+  list-style: none;
+  display: flex;
+  margin-right: 0.4rem;
+}
+
+#nav-menu ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#nav-menu ul li a:hover {
+  background-color: #f7f7f7;
+  /* Sutil cor de fundo no hover */
+  color: var(--primary-color);
+}
+
+/* =========================================================
      DROPDOWN BASE (item "Sobre")
      ========================================================= */
-  .dropdown {
-    position: relative;
-  }
-  
-  /* Botão que mostra/esconde o submenu */
-  .dropbtn {
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.95rem;
-    gap: 0.3rem;
-    /* Adicione um pequeno padding se quiser consistência com links */
-    padding: 0.5rem 0.9rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .dropbtn:hover {
-    background-color: #f7f7f7; 
-    font-weight: 500;
-    color: var(--primary-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .dropbtn i {
-    font-size: 0.9rem;
-  }
-  
-  /* O submenu interno */
-  .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-color);
-    border: 1px solid #eee;
-    border-radius: 6px;
-    overflow: hidden;
-    /* Nos media queries, definiremos como ele se comporta inicialmente */
-  }
-  
-  /* Links internos do submenu */
-  .dropdown-content li {
-    list-style: none;
-    border-bottom: 1px solid #eee;
-  }
-  .dropdown-content li:last-child {
-    border-bottom: none;
-  }
-  .dropdown-content li a {
-    display: block;
-    padding: 0.7rem 1.5rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  .dropdown-content li a:hover {
-    background: #f1f1f1;
-  }
-  
-  /* =========================================================
+.dropdown {
+  position: relative;
+}
+
+/* Botão que mostra/esconde o submenu */
+.dropbtn {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  gap: 0.3rem;
+  /* Adicione um pequeno padding se quiser consistência com links */
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #f7f7f7;
+  font-weight: 500;
+  color: var(--primary-color);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropbtn i {
+  font-size: 0.9rem;
+}
+
+/* O submenu interno */
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  /* Nos media queries, definiremos como ele se comporta inicialmente */
+}
+
+/* Links internos do submenu */
+.dropdown-content li {
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+  background: #f1f1f1;
+}
+
+/* =========================================================
      ESTADO INICIAL (SEM .open)
      ========================================================= */
-  /* Para telas grandes e pequenas, o submenu inicia invisível */
-  .dropdown-content {
-    /* Substituído nos media queries */
-  }
-  
-  /* Quando .dropdown tem a classe .open, o submenu aparece */
-  .dropdown.open .dropdown-content {
-    /* Definido nos media queries */
-  }
-  
-  /* =========================================================
+/* Para telas grandes e pequenas, o submenu inicia invisível */
+.dropdown-content {
+  /* Substituído nos media queries */
+}
+
+/* Quando .dropdown tem a classe .open, o submenu aparece */
+.dropdown.open .dropdown-content {
+  /* Definido nos media queries */
+}
+
+/* =========================================================
      TELAS GRANDES (>= 769px)
      Submenu aparece sobreposto (position:absolute)
      sem aumentar a altura do header.
      ========================================================= */
-  @media (min-width: 769px) {
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      /* Remove qualquer limitação de altura */
-      max-height: none;
-      min-width: 140px;          /* Define uma largura mínima para não ficar muito estreito */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  
-    .dropdown.open .dropdown-content {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
+@media (min-width: 769px) {
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-height: none;     /* Remove qualquer limitação de altura */
+    min-width: 140px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
-  /* =========================================================
+
+  .dropdown.open .dropdown-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
      TELAS MENORES (<= 768px)
      Submenu expande no fluxo, aumentando a altura do header
      ========================================================= */
-  @media (max-width: 768px) {
-    .dropdown-content {
-      position: static;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      margin-top: 0.4rem;  /* Espaço entre o botão e o conteúdo */
-    }
-  
-    .dropdown.open .dropdown-content {
-      max-height: 250px;   /* Ajuste se precisar de mais espaço */
-    }
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 0.4rem;
   }
-  
+
+  .dropdown.open .dropdown-content {
+    max-height: 250px;    /*se precisar de mais espaço tem que ajustar*/
+  }
+}
+
 
 /* MENU MOBILE */
 @media (max-width: 768px) {
@@ -337,7 +340,7 @@ body {
     right: -250px;
     background: var(--bg-color);
     border: 1px solid #eee;
-    padding: 1rem 2rem;
+    padding: 1rem 1.2rem;
     border-radius: 8px 0 0 8px;
     transition: right var(--transition-speed) ease;
   }
@@ -730,7 +733,8 @@ body {
 }
 
 #modal-bio-text {
-  white-space: pre-line; /* Converte quebras de linha em espaços visíveis */
+  white-space: pre-line;
+  /* Converte quebras de linha em espaços visíveis */
   line-height: 1.6;
   margin: 0;
   font-size: 1rem;
@@ -777,9 +781,10 @@ body {
 
 /* Exibe o card apenas em telas grandes */
 @media (max-width: 480px) {
-  .project-card{
+  .project-card {
     display: none;
   }
+
   .project-card-link {
     display: none;
   }
