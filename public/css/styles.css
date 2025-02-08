@@ -492,6 +492,7 @@ body {
   color: var(--secondary-color);
   text-align: center;
   /* padding: 4rem 2rem; */
+  min-height: 40vh;
   border-top: 1px solid #eee;
 }
 
