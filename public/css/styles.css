@@ -182,7 +182,7 @@ body {
 #nav-menu ul {
   list-style: none;
   display: flex;
-  margin-right: 0.4rem;
+  /* margin-right: 0.4rem; */
 }
 
 #nav-menu ul li a {
@@ -260,7 +260,7 @@ body {
 
 .dropdown-content li a {
   display: block;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   color: var(--secondary-color);
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -584,7 +584,7 @@ body {
 
 .colaboradores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -646,6 +646,13 @@ body {
 
   .colaboradores h3 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .colaborador-card{
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
