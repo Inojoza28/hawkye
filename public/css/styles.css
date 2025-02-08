@@ -349,7 +349,7 @@ body {
     right: -250px;
     background: var(--bg-color);
     border: 1px solid #eee;
-    padding: 1rem 1.2rem;
+    padding: 0.9rem 1.2rem;
     border-radius: 8px 0 0 8px;
     transition: right var(--transition-speed) ease;
   }
