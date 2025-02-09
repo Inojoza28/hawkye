@@ -867,6 +867,13 @@ body {
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  section#premiacoes > .container > h2 {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+  }
+}
 
 /* =============================================
    Estilização do botão festivo
