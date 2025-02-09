@@ -3,7 +3,7 @@
 ## Descrição do Projeto
 
 **Hawkye - Resgate Inteligente** é um site desenvolvido para apresentar uma ideia inovadora de startup que utiliza drones, inteligência artificial e tecnologias avançadas para operações de resgate em situações de emergência.  
-> *️⃣ **Importante:** A ideia do projeto não é de minha autoria; este site foi desenvolvido integralmente por mim para atender à proposta da startup.
+> *️⃣ **IMPORTANTE:** A ideia do projeto não é de minha autoria; este site foi desenvolvido integralmente por mim para atender à proposta da startup.
 > **Design e Animações:** Todo o pensamento criativo por trás do design e das animações foi inteiramente concebido e implementado por mim, proporcionando uma experiência única e interativa para os usuários.
 
 ## Funcionalidades
