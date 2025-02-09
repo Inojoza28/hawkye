@@ -867,6 +867,157 @@ body {
   line-height: 1.6;
 }
 
+
+
+
+
+
+
+/* =============================================
+   Exemplo de estilização do botão festivo
+   ============================================= */
+   .btn-festivo {
+    margin-left: 1rem;
+    padding: 0.7rem 1.3rem;
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .btn-festivo:hover {
+    background: #e68900;
+  }
+  
+  /* Alinhamento do texto + botão "comemore" */
+  .comemore {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 0.8rem;
+  }
+  
+  .comemore strong {
+    font-size: 1.1rem;
+  }
+  
+  /* Canvas para confetes em tela cheia */
+  #confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+  
+  /* Container dos balões em tela cheia */
+  #balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9998;
+  }
+  
+  /* Balão menor, desaparecendo mais rápido, corda ligeiramente ondulada */
+  .balloon {
+    position: absolute;
+    bottom: -120px; /* Começa bem abaixo da tela */
+    width: 50px;
+    height: 65px;
+    opacity: 0.95;
+    border-radius: 50px 50px 50px 50px;
+    animation: floatBalloon 3.5s linear forwards;
+  }
+  
+  /* Pseudo-elementos para corda ondulada */
+  .balloon::before,
+  .balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+  }
+  
+  /* Parte superior da corda */
+  .balloon::before {
+    bottom: -25px;
+    transform: translateX(-50%) rotate(3deg);
+  }
+  
+  /* Parte inferior da corda */
+  .balloon::after {
+    bottom: -50px;
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  
+  /* Animação do balão subindo e sumindo */
+  @keyframes floatBalloon {
+    0% {
+      transform: translateY(0) rotateZ(0deg);
+    }
+    70% {
+      transform: translateY(-80vh) rotateZ(6deg);
+    }
+    100% {
+      transform: translateY(-120vh) rotateZ(-10deg);
+      opacity: 0;
+    }
+  }
+  
+  /* =========== Responsivo =========== */
+  @media (max-width: 768px) {
+    /* Ajusta o layout do texto/botão */
+    .comemore {
+      flex-wrap: wrap;
+    }
+
+    .comemore strong{
+      margin: 0 auto;
+    }
+  
+    .btn-festivo {
+      margin: 10px auto;
+    }
+  
+    /* Balões ainda menores e somem mais rápido */
+    .balloon {
+      width: 40px;
+      height: 50px;
+      animation: floatBalloon 3s linear forwards;
+    }
+  
+    .balloon::before,
+    .balloon::after {
+      height: 20px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
   .award-card {
@@ -875,7 +1026,7 @@ body {
   }
 
   .award-image {
-    width: 80%;
+    width: 70%;
     margin-bottom: 1rem;
   }
 }

@@ -24,6 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" defer></script>
 
+  <script src="public/js/celebracao.js"></script>
   <script src="public/js/modal.js"></script>
   <!-- JS Principal -->
   <script src="public/js/script.js" defer></script>
@@ -313,7 +314,7 @@
 
           <!-- Card 5 -->
           <div class="colaborador-card">
-            <img src="imgs/colaborador2.jpg" alt="Henrique Menezes">
+            <img src="public/imgs/membros/henrique-menezes.jpeg" alt="Henrique Menezes">
             <h4>Henrique Menezes</h4>
             <p>Desenvolvedor</p>
             <div class="social-icons">
@@ -355,26 +356,41 @@
 
 
   <!-- NOVA SEÇÃO DE PREMIAÇÕES -->
+  <!-- Seção de Premiações -->
   <section id="premiacoes" class="section fade-in-section alt-bg">
     <div class="container">
       <h2><i class="fas fa-trophy"></i> Premiações</h2>
 
       <div class="award-card">
-        <!-- Substitua pelo caminho real da foto do evento -->
         <img src="public/imgs/demoday_premiacao.jpeg" alt="Foto do momento da premiação" class="award-image" />
-
         <div class="award-content">
           <h3>🏆 1º lugar no Demoday do Porto Digital</h3>
           <p>
-            A equipe <strong>Hawkye</strong> conquistou o 1º lugar no DemoDay da Residência Tecnológica do Porto
-            Digital! Nosso compromisso com inovação, eficiência e impacto positivo nos levou ao topo, e essa vitória é
-            apenas o começo!
+            A equipe <strong>Hawkye</strong> conquistou o 1º lugar no DemoDay
+            da Residência Tecnológica do Porto Digital! Nosso compromisso com
+            inovação, eficiência e impacto positivo nos levou ao topo, e essa
+            vitória é apenas o começo!
           </p>
+
+          <!-- Texto + Botão Festivo -->
+          <div class="comemore">
+            <strong>Comemore junto conosco!</strong>
+            <button id="btn-celebrar" class="btn-festivo">
+              Clique e Comemore
+            </button>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Canvas para confetes (full screen) -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Contêiner para balões (full screen) -->
+  <div id="balloons-container"></div>
+
 
   <!-- Seção de Contato / Footer -->
   <footer id="contato" class="section footer-section fade-in-section">
@@ -398,6 +414,11 @@
       <small>&copy; 2025 Hawkye. Todos os direitos reservados.</small>
     </div>
   </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 </body>
 
 </html>
