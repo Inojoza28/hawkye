@@ -870,6 +870,7 @@ body {
 @media (max-width: 768px) {
   section#premiacoes > .container > h2 {
     display: block;
+    font-size: 1.6rem;
     width: 100%;
     text-align: center !important;
   }
