@@ -907,79 +907,82 @@ body {
   .comemore strong {
     font-size: 1.1rem;
   }
-  
-  /* Canvas para confetes em tela cheia */
-  #confetti-canvas {
-    position: fixed;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-  }
-  
-  /* Container dos balões em tela cheia */
-  #balloons-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 9998;
-  }
-  
-  /* Balão menor, desaparecendo mais rápido, corda ligeiramente ondulada */
-  .balloon {
-    position: absolute;
-    bottom: -120px; /* Começa bem abaixo da tela */
-    width: 50px;
-    height: 65px;
+/* Canvas para confetes em tela cheia */
+#confetti-canvas {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+/* Container dos balões em tela cheia */
+#balloons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+/* Balão menor, desaparecendo mais rápido, corda ligeiramente ondulada */
+.balloon {
+  position: absolute;
+  bottom: -120px; /* Começa bem abaixo da tela */
+  width: 50px;
+  height: 65px;
+  opacity: 0.95;
+  border-radius: 50px; /* Simplificado */
+  animation: floatBalloon 3.5s ease-out forwards; /* Alterado para ease-out se desejar desaceleração */
+}
+
+/* Pseudo-elementos para corda ondulada */
+/* Se quiser a corda mais reta com leve ondulação, reduza os ângulos */
+.balloon::before,
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+/* Parte superior da corda - leve ondulação (ajuste o ângulo conforme preferir) */
+.balloon::before {
+  bottom: -25px;
+  transform: translateX(-50%) rotate(2deg);
+}
+
+/* Parte inferior da corda - leve ondulação (ajuste o ângulo conforme preferir) */
+.balloon::after {
+  bottom: -50px;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+/* Animação do balão subindo e sumindo */
+@keyframes floatBalloon {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
     opacity: 0.95;
-    border-radius: 50px 50px 50px 50px;
-    animation: floatBalloon 3.5s linear forwards;
   }
-  
-  /* Pseudo-elementos para corda ondulada */
-  .balloon::before,
-  .balloon::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 25px;
-    background: rgba(0, 0, 0, 0.2);
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 1px;
+  80% {
+    transform: translateY(-80vh) rotateZ(4deg);
+    opacity: 0.55; 
   }
-  
-  /* Parte superior da corda */
-  .balloon::before {
-    bottom: -25px;
-    transform: translateX(-50%) rotate(3deg);
+  100% {
+    transform: translateY(-120vh) rotateZ(-4deg);
+    opacity: 0; /* Fase final: opacidade desaparece */
   }
-  
-  /* Parte inferior da corda */
-  .balloon::after {
-    bottom: -50px;
-    transform: translateX(-50%) rotate(-3deg);
-  }
-  
-  /* Animação do balão subindo e sumindo */
-  @keyframes floatBalloon {
-    0% {
-      transform: translateY(0) rotateZ(0deg);
-    }
-    70% {
-      transform: translateY(-80vh) rotateZ(6deg);
-    }
-    100% {
-      transform: translateY(-120vh) rotateZ(-10deg);
-      opacity: 0;
-    }
-  }
+}
+
   
   /* =========== Responsivo =========== */
   @media (max-width: 768px) {
