@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });      
 
       // Lança balões
-      launchBalloons(isMobile ? 10 : 12); 
+      launchBalloons(isMobile ? 12 : 20); 
     });
   }
 
@@ -45,27 +45,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Cria um balão individual
+  // Cria um balão individual com variações para uma posição mais natural
   function createBalloon() {
     const balloon = document.createElement('div');
     balloon.classList.add('balloon');
- 
+
     // Define cores aleatórias ou pré-determinadas
     const colors = ['#ff4081', '#ffeb3b', '#4caf50', '#2196f3', '#ff5722'];
     balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
- 
+
     // Posição X aleatória (entre 10% e 90%)
     const randomX = Math.floor(Math.random() * 80) + 10;
     balloon.style.left = `${randomX}%`;
- 
-    // Tamanho aleatório se quiser
+
+    // Adiciona um atraso de animação aleatório (para que os balões não subam todos ao mesmo tempo)
+    balloon.style.animationDelay = `${Math.random() * 0.5}s`;
+
+    // Variação na posição vertical: adiciona um offset aleatório ao bottom (entre -15 e +15px)
+    const randomBottomOffset = Math.floor(Math.random() * 30) - 15; 
+    balloon.style.bottom = `${-120 + randomBottomOffset}px`;
+
+    // Tamanho aleatório (variação de escala)
     const scale = Math.random() * 0.4 + 0.8; 
     balloon.style.transform = `scale(${scale})`;
- 
-    // Insere no container
+
+    // Insere o balão no container
     balloonsContainer.appendChild(balloon);
- 
-    // Remove o balão do DOM após a animação terminar (5s)
+
+    // Remove o balão do DOM após a animação terminar
     balloon.addEventListener('animationend', () => {
       balloon.remove();
     });
