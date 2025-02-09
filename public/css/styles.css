@@ -868,13 +868,8 @@ body {
 }
 
 
-
-
-
-
-
 /* =============================================
-   Exemplo de estilização do botão festivo
+   Estilização do botão festivo
    ============================================= */
    .btn-festivo {
     margin-left: 1rem;
@@ -1006,17 +1001,6 @@ body {
     }
   }
   
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
