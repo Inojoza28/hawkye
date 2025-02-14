@@ -981,7 +981,7 @@ body {
     opacity: 0.95;
   }
   80% {
-    transform: translateY(-80vh) rotateZ(4deg);
+    transform: translateY(-90vh) rotateZ(4deg);
     opacity: 0.55; 
   }
   100% {
