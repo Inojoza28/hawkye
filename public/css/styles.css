@@ -649,6 +649,13 @@ body {
   background: #333;
 }
 
+/* Estilo para links desativados */
+.btn-social.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Responsividade: ajuste em telas menores */
 @media (max-width: 768px) {
   .colaboradores-grid {

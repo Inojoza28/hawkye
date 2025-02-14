@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Botão "Voltar ao Topo"
+// 6. Botão "Voltar ao Topo"
 function scrollToTop() {
   window.scrollTo({
     top: 0,

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });      
 
       // Lança balões
-      launchBalloons(isMobile ? 12 : 20); 
+      launchBalloons(isMobile ? 12 : 16); 
     });
   }
 
